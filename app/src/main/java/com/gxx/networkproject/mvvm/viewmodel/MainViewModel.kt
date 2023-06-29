@@ -1,5 +1,6 @@
 package com.gxx.networkproject.mvvm.viewmodel
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.gxx.networklibrary.networkpackge.apiservice.OnDisposablesListener
@@ -81,6 +82,7 @@ class MainViewModel : ViewModel(), OnDisposablesListener {
                 baseBean: BaseModel
             ) {
                 super.onRequestBaseBeanSuccess(data, baseBean)
+                //throw IllegalStateException("来个故意崩溃，测试有捕获到错误，不会导致APP闪退出去")
             }
 
             override fun onRequestDataFail(code: String, msg: String, baseBean: BaseModel?) {
@@ -109,7 +111,7 @@ class MainViewModel : ViewModel(), OnDisposablesListener {
                  override fun onNext(t: OnIParserListener) {
                     if(BuildConfig.DEBUG){
                      Log.d(TAG, "是否正常：${ t.isSuccess}");
-                        Log.d(TAG, "targetJson：${ t.onTargetJsonElement().asJsonArray.toString()}");
+                    Log.d(TAG, "targetJson：${ t.onTargetJsonElement().asJsonArray.toString()}");
                     }
                  }
 

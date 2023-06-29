@@ -45,20 +45,20 @@ open class ParseResultDataImpl<T> : AbsOnRequestResultImpl() {
 
     override fun onRequestSuccess(
         method: String?,
-        jsonElement: JsonElement?,
+        targetElement: JsonElement?,
         onIParserListener: OnIParserListener?
     ) {
-        super.onRequestSuccess(method,jsonElement,onIParserListener)
+        super.onRequestSuccess(method,targetElement,onIParserListener)
         if (onIParserListener== null){
             return
         }
-        if (jsonElement!=null){
+        if (targetElement!=null){
             var result:Any?=null
             try {
                 val parameterizedType = this::class.java.genericSuperclass as ParameterizedType
                 val subType =  parameterizedType.actualTypeArguments.first() //获取泛型T
                 val adapter: JsonAdapter<Any> = MoshiUtil.moshi.adapter(subType)
-                result = adapter.fromJson(jsonElement.toString())
+                result = adapter.fromJson(targetElement.toString())
             } catch (e: Exception) {
                 e.printStackTrace()
                 //处理解析异常

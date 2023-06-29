@@ -18,7 +18,7 @@ import java.net.UnknownHostException
 /**
  * @author gaoxiaoxiong
  * @date 创建时间: 2023/6/22/022
- * @description TODO 当前类，处理成功，失败，开发者可以自行修改
+ * @description TODO targetJsonElement转换成具体的对象
  **/
 open class ParseResultDataImpl<T> : AbsOnRequestResultImpl() {
     private val TAG = "AbsDataResultCallback"
@@ -43,6 +43,12 @@ open class ParseResultDataImpl<T> : AbsOnRequestResultImpl() {
         onRequestBaseBeanFail(onIParserListener as BaseModel? )
     }
 
+    /**
+     * @author gaoxiaoxiong
+     * @date 创建时间: 2023/6/29/029
+     * @description  成功
+     * @param targetElement data里面的json
+     **/
     override fun onRequestSuccess(
         method: String?,
         targetElement: JsonElement?,

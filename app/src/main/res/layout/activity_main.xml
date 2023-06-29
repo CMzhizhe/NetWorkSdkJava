@@ -23,12 +23,23 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/bt_get_list_second_sync"
+            android:text="第二个域名，查询快递，同步查询，自己开线层"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
             android:id="@+id/bt_get_list_second_v2"
             android:text="第二个域名，查询快递，自定义api"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-
+        <Button
+            android:id="@+id/bt_down_pic"
+            android:text="图片文件下载"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 

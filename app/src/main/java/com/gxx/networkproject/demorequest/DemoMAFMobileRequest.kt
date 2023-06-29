@@ -1,5 +1,6 @@
 package com.gxx.networkproject.demorequest
 
+import android.content.Context
 import android.util.Log
 import com.gxx.networklibrary.BuildConfig
 import com.gxx.networklibrary.networkpackge.apiservice.OnDisposablesListener
@@ -7,10 +8,12 @@ import com.gxx.networklibrary.networkpackge.apiservice.base.AbsMAFApiManager
 import com.gxx.networklibrary.networkpackge.apiservice.base.AbsMAFMobileRequest
 import com.gxx.networklibrary.networkpackge.apiservice.base.BAFABSMAFMobileRequest.OnMAFApiManagerListener
 import com.gxx.networklibrary.networkpackge.apiservice.base.BAFABSMAFMobileRequest.OnRequestResultCallBackConfigListener
+import com.gxx.networklibrary.networkpackge.customobserver.filedownobserver.FileDownLoadObserver
 import com.gxx.networkproject.constant.Constant
 import com.gxx.networkproject.demorequest.factory.FactoryImpl
 import com.gxx.networkproject.demorequest.parse.ParseResultDataImpl
 import com.gxx.networkproject.demorequest.parse.ResponseTransform
+import java.io.File
 
 /**
  * @author gaoxiaoxiong
@@ -56,6 +59,17 @@ class DemoMAFMobileRequest private constructor():OnRequestResultCallBackConfigLi
     }
 
     private class AbsMAFMobileRequestImpl : AbsMAFMobileRequest()
+
+    /**
+     * @author gaoxiaoxiong
+     * @date 创建时间: 2023/6/29/029
+     * @description  图片下载
+     * @param fileDownLoadObserver 下载的文件进度
+     **/
+    fun downPicFile(context: Context, downUrl:String,fileDownLoadObserver: FileDownLoadObserver<File>){
+        val cacheDir = context.cacheDir;
+        mAbsMAFMobileRequestImpl.downFileProgress(downUrl,cacheDir.absolutePath,"${System.currentTimeMillis()}.jpg",fileDownLoadObserver)
+    }
 
     /**
      * @author gaoxiaoxiong

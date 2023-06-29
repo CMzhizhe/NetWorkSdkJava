@@ -56,6 +56,11 @@ class DemoMAFMobileRequestV2 private constructor():
         }
     }
 
+    /**
+     * @author gaoxiaoxiong
+     * @date 创建时间: 2023/6/29/029
+     * @description  get、post、put、文件下载，上传的封装
+     **/
     private class AbsMAFMobileRequestImpl : AbsMAFMobileRequest()
 
     /**
@@ -86,6 +91,19 @@ class DemoMAFMobileRequestV2 private constructor():
         mAbsMAFMobileRequestImpl.get(method,urlMap,parseResultDataImpl,parseResultDataImpl,onDisposablesListener)
     }
 
+    /**
+     * @author gaoxiaoxiong
+     * @date 创建时间: 2023/6/29/029
+     * @description  同步的get请求
+     **/
+    fun <T> getSync(
+        method: String,
+        urlMap: Map<String, Any>?,
+        parseResultDataImpl: ParseResultDataImpl<T>,
+        onDisposablesListener: OnDisposablesListener?
+    ) {
+        mAbsMAFMobileRequestImpl.getSync(method,urlMap,parseResultDataImpl,parseResultDataImpl,onDisposablesListener)
+    }
 
     /**
      * @author gaoxiaoxiong

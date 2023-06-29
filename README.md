@@ -12,10 +12,10 @@
 * 9、在onSuccess和onFail 方法里面崩溃回调
 * 10、网络超时通知
 
-觉得不错，来个点赞
+[github，觉得不错，来个点赞](https://github.com/CMzhizhe/NetWorkSdkJava)
 
 #### 下一步计划干嘛
-准备弄个kt携程网络版本的封装
+准备弄个携程网络版本的封装
 
 #### 简单示例
 ```
@@ -152,7 +152,6 @@ AbsMAFMobileRequest.postSyncBodyResList()
  AbsMAFMobileRequest.putSyncBodyResList()
 ```
 
-```
 #### 获取自定义api
 ```
   val customApi = DemoMAFMobileRequestV2.getInstance().getApi(CustomApi::class.java)
@@ -161,7 +160,6 @@ AbsMAFMobileRequest.postSyncBodyResList()
 ```
 AbsMAFMobileRequest.downFileProgress(downUrl,cacheDir.absolutePath,"${System.currentTimeMillis()}.jpg",fileDownLoadObserver)
 ```
-
 #### 接口介绍
 * OnObservableSourceStringListener
 ```

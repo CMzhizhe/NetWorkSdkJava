@@ -1,0 +1,3 @@
+rootProject.name = "NetWorkProject"
+include ':app'
+include ':networklibrary'
